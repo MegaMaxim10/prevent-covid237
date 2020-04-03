@@ -37,7 +37,10 @@
     },
     "autoload": {
         "files": [
-            "app/Helpers/Helper.php"
+            "app/Helpers/Helper.php",
+            "app/Helpers/template/ValidationAccountEmail.php",
+            "app/Helpers/template/ProductValidationEmail.php",
+            "app/Helpers/template/DonationEmail.php"
         ],
         "psr-4": {
             "App\\": "app/"

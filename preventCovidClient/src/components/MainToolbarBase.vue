@@ -9,37 +9,45 @@ export default class MainToolbarBase extends Vue {
   public showNavbar = false;
 
   public async created() {
-    /*this.$store.subscribe(
+    this.$store.subscribe(
       (mutation, state) => {
         const t = mutation.type;
         if ((t === coreTypes.MU_SET_AUTH_ACCESS_TOKEN) || 
-            (t === coreTypes.MU_SET_AUTH_STATUS) || 
+            (t === coreTypes.MU_SET_AUTH_STATUS)
            ) {
           this.loadData();
         }
       }
-    );*/
+    );
   }
 
   public loadData() {
-    /*const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token');
+    // console.log(token);
+    // console.log(localStorage.getItem('user'));
+    const user = JSON.parse('' + localStorage.getItem('user'));
+    if (user !== null) {
+      console.log(user.email);
+    }
+    
     if ((token !== null) && (token !== 'undefined')) {
       this.showNavbar = true;
       this.$store.commit(coreTypes.MU_TOOGLE_NAV_DRAWER);  
-    }*/
+    }
+    // console.log(this.showNavbar);
   }
 
   public navigationDrawer() {
     this.$store.commit(coreTypes.MU_TOOGLE_NAV_DRAWER);
   }
-  public gotoLogin() {
-    if (this.$router.currentRoute.name !== 'signin') {
-      this.$router.push({name: 'signin'});
+  public gotoMyProducts() {
+    if (this.$router.currentRoute.name !== 'productEdit') {
+      this.$router.push({name: 'productEdit'});
     }
   }
-  public gotoRegister() {
-    if (this.$router.currentRoute.name !== 'register') {
-      this.$router.push({name: 'register'});
+  public gotoHome() {
+    if (this.$router.currentRoute.name !== 'home') {
+      this.$router.push({name: 'home'});
     }
   }
 }

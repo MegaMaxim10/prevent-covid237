@@ -30,9 +30,11 @@ export default class SigninBase extends Vue {
 
     public async loadOrders() {
       const status = this.$store.getters[coreTypes.GET_ACCESS_TOKEN]; 
-      localStorage.setItem('token', JSON.stringify(status));
+      localStorage.setItem('token', JSON.stringify(status.success.token));
+      localStorage.setItem('user', JSON.stringify(status.user));
       localStorage.setItem('savedTokenDate', JSON.stringify(new Date().getTime()));
       const token = localStorage.getItem('token');
+      console.log(localStorage.getItem('user'));
       if ( (token === null) || (token === 'undefined')) {
         this.errorMessage = 'This account does not exist !!!';
       } else {

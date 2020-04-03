@@ -53,7 +53,7 @@
       },
       
       async isAuthenticated() {
-        const hours = 0.5;
+        const hours = 0.05;
         const saved = localStorage.getItem('savedTokenDate');
         if (saved && (new Date().getTime() -  parseInt(saved, 0) > hours * 60 * 60 * 1000)) {
           localStorage.clear();

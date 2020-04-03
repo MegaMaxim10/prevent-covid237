@@ -13,5 +13,21 @@ export default class NavBarBase extends Vue {
         }
     }
 
+    public gotoHandleProducts() {
+    if (this.$router.currentRoute.name !== 'handleProducts') {
+      this.$router.push({name: 'handleProducts'});
+    }
+  }
+  public gotoHandleUsers() {
+    if (this.$router.currentRoute.name !== 'handleUsers') {
+      this.$router.push({name: 'handleUsers'});
+    }
+  }
+  public gotoRegister() {
+    if (this.$router.currentRoute.name !== 'register') {
+      this.$router.push({name: 'register'});
+    }
+  }
+
 }
 </script>

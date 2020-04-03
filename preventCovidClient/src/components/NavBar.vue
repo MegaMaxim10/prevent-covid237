@@ -37,17 +37,17 @@
                     </v-list-item-icon>
                     <v-list-item-content>
                         <v-list-item-title>
-                            First item
+                            Products
                         </v-list-item-title>
                     </v-list-item-content>  
                 </v-list-item>
 
-                <v-list-item>
+                <v-list-item @click="gotoHandleProducts()">
                     <v-list-item-icon>
                         <v-icon class="pl-4">mdi-cloud-upload</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title>item 1</v-list-item-title>
+                        <v-list-item-title>Handle products</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
                 <v-list-item>
@@ -55,7 +55,39 @@
                         <v-icon class="pl-4">mdi-cloud-upload</v-icon>
                     </v-list-item-icon>
                     <v-list-item-content>
-                        <v-list-item-title>item 2</v-list-item-title>
+                        <v-list-item-title>Create product</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+            </v-list-group>
+        </v-list>
+
+        <v-list>
+            <v-list-group>
+                <v-list-item slot="activator">
+                    <v-list-item-icon>
+                        <v-icon>mdi-domain</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>
+                            Users
+                        </v-list-item-title>
+                    </v-list-item-content>  
+                </v-list-item>
+
+                <v-list-item @click="gotoHandleUsers()">
+                    <v-list-item-icon>
+                        <v-icon class="pl-4">mdi-cloud-upload</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>Handle users</v-list-item-title>
+                    </v-list-item-content>
+                </v-list-item>
+                <v-list-item @click="gotoRegister()">
+                    <v-list-item-icon>
+                        <v-icon class="pl-4">mdi-cloud-upload</v-icon>
+                    </v-list-item-icon>
+                    <v-list-item-content>
+                        <v-list-item-title>record user</v-list-item-title>
                     </v-list-item-content>
                 </v-list-item>
             </v-list-group>

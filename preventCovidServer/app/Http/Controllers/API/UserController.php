@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 use App\User; 
 use Illuminate\Support\Facades\Auth; 
 
@@ -28,7 +28,7 @@ class UserController extends Controller
             $user = Auth::user();
             $success['token'] =  $user->createToken('MyApp')->accessToken;
             $success['status'] = true;
-            return response()->json(['success' => $success], $this->successStatus);
+            return response()->json(['success' => $success, 'user'=>$user], $this->successStatus);
         } else {
             return response()->json(['success' => $success]);
         }    
@@ -53,8 +53,11 @@ class UserController extends Controller
         if ($validator->fails()) {
             return response()->json(['success' => $success], 401);
         }
-        $user = User::create([
-            'name' => $request->name, 
+        $group = DB::table('group')->where('group_name', 'user')->get();
+        $user = User::create([ 
+            'group_id' => $group[0]->group_id,
+            'name' => $request->name,
+            'last_name' => ' ', 
             'email' => $request->email, 
             'password' => bcrypt($request->password)
         ]);

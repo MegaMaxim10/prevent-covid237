@@ -23,7 +23,11 @@ Route::group(['middleware' => 'auth:api'], function(){
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-Route::get('mailbox', 'Api\ApiController@mailbox');
-
-Route::get('quiz', 'Api\ApiController@getAllQuiz');
-Route::get('test', 'Api\ApiController@getAllTest');
+Route::post('saveProduct', 'Api\ApiController@saveProduct');
+Route::post('loadProductImage', 'Api\ApiController@getUrlImage');
+Route::post('makeDonation', 'Api\ApiController@makeDonation');
+Route::post('sendEmailToHealthPersonnel', 'Api\ApiController@sendEmailToHealthPersonnel');
+Route::get('images/{filename}', 'Api\ApiController@getImage');
+Route::get('allProducts', 'Api\ApiController@getProducts');
+Route::get('allUsers', 'Api\ApiController@getUsers');
+Route::get('test', 'Api\ApiController@test');
