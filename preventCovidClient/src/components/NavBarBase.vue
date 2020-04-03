@@ -28,6 +28,5 @@ export default class NavBarBase extends Vue {
       this.$router.push({name: 'register'});
     }
   }
-
 }
 </script>

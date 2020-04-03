@@ -14,7 +14,6 @@ use App\User;
 
 class ApiController extends Controller
 {
-
     public function saveProduct(Request $request) {
     	$user = DB::table('users')->where('email', 'admin@gmail.com')->get();
     	if($user != '[]') {
